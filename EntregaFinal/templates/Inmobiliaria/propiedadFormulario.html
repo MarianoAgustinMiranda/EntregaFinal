@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block title %}
+Propiedad formulario
+{% endblock %}
+
+{% block inicio %}
+
+    <form action="" method="POST">
+    {% csrf_token %}
+
+        {{ form.as_p }}   
+
+        <input type="submit" value="Enviar">
+
+    </form>
+
+
+{% endblock %}

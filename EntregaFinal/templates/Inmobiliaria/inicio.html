@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block contenidoQueCambia %}
+
+    <div class="text-center">
+        <img height="40px" src="{{url}}" >
+        <h3>Que bueno verte {{user.username}}</h3>
+    </div>
+
+    <!--Aquí va lo que cambia, y lo asociado a está vista :) -->
+    <h1>{{mensaje}}</h1>
+
+
+    <h3>Podes buscar una propiedad:</h3>
+
+    <form action="/Inmobiliaria/buscar/" method="GET">
+
+    <input type="text" name="name" >
+
+    <input type="submit" value="Buscar">
+
+
+
+
+    </form>
+
+
+
+    {% if props %}
+
+    <p>Estamos buscando el: {{nombre}}</p>
+
+    <ul>
+    {% for propiedad in props %}
+    <li> {{propiedad.nombre}} </li>
+    {% endfor %}
+
+    </ul>
+
+    {% else %}
+    <p>No hay datos con esa descripción.</p>
+
+    {% endif %}
+
+    <p style="color: red;">{{respuesta}}</p>
+
+
+
+
+
+{% endblock %}

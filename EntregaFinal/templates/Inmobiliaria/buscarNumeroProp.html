@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block title %}
+Busqueda Propiedad
+{% endblock %}
+
+{% block inicio %}
+
+    <form action="/Inmobiliaria/buscarNumeropropPost" method="GET">
+    {% csrf_token %}
+
+        {{ form.as_p }}   
+
+        <input type="submit" value="Buscar">
+
+    </form>
+
+
+{% endblock %}

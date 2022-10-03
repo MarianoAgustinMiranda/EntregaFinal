@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block title %}
+Propiedad
+{% endblock %}
+
+{% block inicio %}
+
+
+    {% for propiedad in object_list %}
+        El nombre del curso es {{ propiedad.nombre }} con la camada {{ propiedad.numeroprop }} 
+        <a href="{% url 'EliminarPropiedad' propiedad.numeroprop %}">-X-</a>
+        <a href="{% url 'EditarPropiedad' propiedad.numeroprop %}"> Editar </a>
+        <br>
+    {% endfor %}
+
+{% endblock %}
